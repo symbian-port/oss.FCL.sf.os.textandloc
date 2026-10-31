@@ -36,7 +36,7 @@ sub strippedDownLine
 sub nextNonEmptyStrippedDownLine
 	{
 	my $fileHandle=shift;
-	if (defined(@PARSER::nextNonEmptyStrippedDownLine) && (@PARSER::nextNonEmptyStrippedDownLine>0))
+	if (@PARSER::nextNonEmptyStrippedDownLine>0)
 		{
 		if (@{$PARSER::nextNonEmptyStrippedDownLine[0]}!=2)
 			{
@@ -75,4 +75,3 @@ sub ungetNonEmptyStrippedDownLine
 	@$arrayCopy=@_;
 	unshift(@PARSER::nextNonEmptyStrippedDownLine, $arrayCopy);
 	}
-
